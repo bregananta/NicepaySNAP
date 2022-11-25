@@ -12,9 +12,11 @@ class NicepaySnap
 {
     public function requestToken()
     {
+        $additionalInfo = [];
+        
         $body = [
             'grant_type' => 'client_credentials',
-            'additionalInfo' => [],
+            'additionalInfo' => $additionalInfo,
         ];
 
         return $this->apiRequest('v1.0/access-token/b2b', $body);
