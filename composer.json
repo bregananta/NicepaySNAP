@@ -1,0 +1,37 @@
+{
+    "name": "bregananta/nicepaysnap",
+    "description": "Laravel integration to NicePay-SNAP Payment Gateway",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kunto Bregananta Adi",
+            "email": "bregananta@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Bregananta\\NicepaySnap\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Bregananta\\NicepaySnap\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Bregananta\\NicepaySnap\\NicepaySnapBaseServiceProvider"
+            ],
+            "aliases": {
+                "Nicepay": "Bregananta\\NicepaySnap\\Facades\\NicepaySnap"
+            }
+        }
+    },
+    "require-dev": {
+        "orchestra/testbench": "^7.5"
+    },
+    "require": {
+        "guzzlehttp/guzzle": "^7.4"
+    }
+}
