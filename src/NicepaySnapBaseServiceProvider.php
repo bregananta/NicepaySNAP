@@ -1,6 +1,6 @@
 <?php
 
-namespace Bregananta\Nicepay;
+namespace Bregananta\NicepaySnap;
 
 use Illuminate\Support\ServiceProvider;
 
