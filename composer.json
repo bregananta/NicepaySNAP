@@ -24,7 +24,7 @@
                 "Bregananta\\NicepaySnap\\NicepaySnapBaseServiceProvider"
             ],
             "aliases": {
-                "Nicepay": "Bregananta\\NicepaySnap\\Facades\\NicepaySnap"
+                "NicepaySnap": "Bregananta\\NicepaySnap\\Facades\\NicepaySnap"
             }
         }
     },
