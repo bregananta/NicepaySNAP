@@ -10,8 +10,9 @@ use Illuminate\Support\Str;
 
 class NicepaySnap
 {
-    public function requestToken(array $additionalInfo):string
+    public function requestToken(array $additionalInfo = null):string
     {
+        if ($additionalInfo == null) $additionalInfo = [];
         $body = [
             'grant_type' => 'client_credentials',
             'additionalInfo' => $additionalInfo,
@@ -43,7 +44,7 @@ class NicepaySnap
 
     protected function getClientId():string
     {
-        return config('nicepaysnap-config.imid');
+        return config('nicepaysnap-config.client_id');
     }
 
     protected function getClientSecret():string
