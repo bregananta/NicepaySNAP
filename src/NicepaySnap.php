@@ -57,11 +57,6 @@ class NicepaySnap
         return config('nicepaysnap-config.base_url');
     }
 
-    protected function getPrivateKey():string
-    {
-        return config('nicepaysnap-config.private_key');
-    }
-
     protected function getTimeStamp():string
     {
         $d = Carbon::now('Asia/Jakarta');
@@ -72,8 +67,10 @@ class NicepaySnap
 
     protected function getSignature($timeStamp):string
     {
+        $privateKeyFile = config('nicepaysnap-config.private_key_path');
+        $private_key = file_get_contents($privateKeyFile);
+
         $string = $this->getClientId() . '|' . $timeStamp;
-        $private_key = $this->getPrivateKey();
         openssl_sign($string, $signature, $private_key, OPENSSL_ALGO_SHA256);
 
         return $signature;
